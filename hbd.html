@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love Scrapbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Short+Stack&display=swap');
+        
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .font-scrapbook {
+            font-family: 'Short Stack', cursive;
+        }
+        
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            animation: fall 4s linear forwards;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 1rem 1rem 2rem 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg);
+        }
+        
+        .calendar-day {
+            transition: all 0.3s ease;
+        }
+        
+        .calendar-day:hover {
+            transform: scale(1.1);
+            background-color: #f9a8d4;
+        }
+        
+        .special-date {
+            background-color: #f472b6;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 min-h-screen font-scrapbook">
+    <!-- Login Page -->
+    <div id="login-page" class="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-pink-200 to-purple-200 z-50 transition-opacity duration-500">
+        <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md">
+            <h1 class="text-3xl font-dancing text-center text-pink-600 mb-2">My Love</h1>
+            <p class="text-center text-gray-600 mb-6">Enter our secret code</p>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-pink-700 mb-1">Username</label>
+                    <input type="text" id="username" class="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Your name">
+                </div>
+                <div>
+                    <label class="block text-pink-700 mb-1">Password</label>
+                    <input type="password" id="password" class="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Our special number">
+                </div>
+                
+                <button onclick="checkLogin()" class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors font-bold mt-4">
+                    Unlock My Heart
+                </button>
+                
+                <div id="error-message" class="text-red-400 text-center mt-2 hidden"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Scrapbook Page -->
+    <div id="scrapbook-page" class="hidden p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-dancing text-pink-600">Our Love Scrapbook</h1>
+            <p class="text-lg text-pink-400">Every moment with you is special  ❤️</p>
+        </header>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <!-- Photo Card -->
+            <div class="card bg-white rounded-xl p-4 shadow-md">
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1529333164857-42f00e56d87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Our Photo" class="w-full h-64 object-cover rounded">
+                    <p class="text-center mt-2 font-dancing text-xl text-gray-700">You & Me</p>
+                </div>
+                <p class="mt-4 text-gray-600">This is where our photo would be. Imagine us smiling together here!</p>
+            </div>
+            
+            <!-- Love Note Card -->
+            <div class="card bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-pink-200 rounded-bl-full"></div>
+                <div class="absolute bottom-0 left-0 w-16 h-16 bg-purple-200 rounded-tr-full"></div>
+                <div class="relative z-10">
+                    <h2 class="font-dancing text-3xl text-pink-700 mb-4">My Love Note</h2>
+                    <p class="text-lg leading-relaxed">Every day with you is a beautiful adventure. You make my heart skip a beat with just your smile. I cherish every moment we spend together, no matter how small. I love you more than words can express. ❤️</p>
+                </div>
+            </div>
+            
+            <!-- Calendar Card -->
+            <div class="card bg-white rounded-xl p-4 shadow-md">
+                <h2 class="font-dancing text-3xl text-center text-pink-700 mb-4">Our Special Dates</h2>
+                <div class="grid grid-cols-7 gap-1 text-center">
+                    <div class="font-bold text-pink-500">S</div>
+                    <div class="font-bold text-pink-500">M</div>
+                    <div class="font-bold text-pink-500">T</div>
+                    <div class="font-bold text-pink-500">W</div>
+                    <div class="font-bold text-pink-500">T</div>
+                    <div class="font-bold text-pink-500">F</div>
+                    <div class="font-bold text-pink-500">S</div>
+                    
+                    <!-- Empty days -->
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded">1</div>
+                    
+                    <!-- Week 2 -->
+                    <div class="calendar-day py-1 rounded">2</div>
+                    <div class="calendar-day py-1 rounded">3</div>
+                    <div class="calendar-day py-1 rounded">4</div>
+                    <div class="calendar-day py-1 rounded">5</div>
+                    <div class="calendar-day py-1 rounded">6</div>
+                    <div class="calendar-day py-1 rounded">7</div>
+                    <div class="calendar-day py-1 rounded">8</div>
+                    
+                    <!-- Week 3 -->
+                    <div class="calendar-day py-1 rounded">9</div>
+                    <div class="calendar-day py-1 rounded">10</div>
+                    <div class="calendar-day py-1 rounded">11</div>
+                    <div class="calendar-day py-1 rounded">12</div>
+                    <div class="calendar-day py-1 rounded">13</div>
+                    <div class="calendar-day py-1 rounded">14</div>
+                    <div class="calendar-day py-1 rounded special-date" title="Valentine's Day">15</div>
+                    
+                    <!-- Week 4 -->
+                    <div class="calendar-day py-1 rounded">16</div>
+                    <div class="calendar-day py-1 rounded">17</div>
+                    <div class="calendar-day py-1 rounded">18</div>
+                    <div class="calendar-day py-1 rounded">19</div>
+                    <div class="calendar-day py-1 rounded">20</div>
+                    <div class="calendar-day py-1 rounded">21</div>
+                    <div class="calendar-day py-1 rounded">22</div>
+                    
+                    <!-- Week 5 -->
+                    <div class="calendar-day py-1 rounded">23</div>
+                    <div class="calendar-day py-1 rounded">24</div>
+                    <div class="calendar-day py-1 rounded">25</div>
+                    <div class="calendar-day py-1 rounded">26</div>
+                    <div class="calendar-day py-1 rounded">27</div>
+                    <div class="calendar-day py-1 rounded">28</div>
+                    <div class="calendar-day py-1 rounded">29</div>
+                    
+                    <!-- Week 6 -->
+                    <div class="calendar-day py-1 rounded">30</div>
+                    <div class="calendar-day py-1 rounded">31</div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                    <div class="calendar-day py-1 rounded"></div>
+                </div>
+                <p class="mt-4 text-center text-pink-600">Hover over the 15th - our special day!</p>
+            </div>
+            
+            <!-- Memory Card -->
+            <div class="card bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl p-6 shadow-md">
+                <h2 class="font-dancing text-3xl text-purple-700 mb-4">Sweet Memories</h2>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <span class="text-pink-500 mr-2">❤️</span>
+                        <span>The first time we met</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-pink-500 mr-2">❤️</span>
+                        <span>Our first date at the coffee shop</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-pink-500 mr-2">❤️</span>
+                        <span>That rainy day we spent watching movies</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-pink-500 mr-2">❤️</span>
+                        <span>When you surprised me with breakfast in bed</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-pink-500 mr-2">❤️</span>
+                        <span>Every "I love you" you've ever said</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Heart Animation Card -->
+            <div class="card bg-white rounded-xl p-4 shadow-md relative overflow-hidden" id="heart-container">
+                <h2 class="font-dancing text-3xl text-center text-pink-700 mb-4">My Heart for You</h2>
+                <p class="text-center mb-4">Click anywhere in this card to make hearts appear!</p>
+                <div class="flex justify-center">
+                    <div class="text-6xl animate-bounce" style="animation-duration: 2s;">❤️</div>
+                </div>
+            </div>
+            
+            <!-- Future Dreams Card -->
+            <div class="card bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl p-6 shadow-md">
+                <h2 class="font-dancing text-3xl text-blue-700 mb-4">Our Future</h2>
+                <p class="mb-4">I can't wait for all the adventures we'll have together:</p>
+                <div class="bg-white bg-opacity-50 rounded-lg p-4">
+                    <p class="text-sm italic">"Someday we'll travel the world together, have cozy Sunday mornings, and grow old laughing at our inside jokes. Every day with you is a dream come true."</p>
+                </div>
+                <div class="mt-4 flex justify-end">
+                    <span class="font-dancing text-xl text-blue-600">Forever yours</span>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-center mt-12 mb-4 text-pink-400">
+            <p>Made with ❤️ for the most wonderful person in my life</p>
+        </footer>
+    </div>
+    
+    <script>
+        function checkLogin() {
+            const username = document.getElementById('username').value.toLowerCase();
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            // Our secret login
+            if (username === 'love' && password === '123') {
+                // Hide login page with animation
+                document.getElementById('login-page').style.opacity = '0';
+                document.getElementById('login-page').style.pointerEvents = 'none';
+                
+                // Show scrapbook after animation completes
+                setTimeout(() => {
+                    document.getElementById('login-page').classList.add('hidden');
+                    document.getElementById('scrapbook-page').classList.remove('hidden');
+                    
+                    // Start playing romantic background music (optional)
+                    // new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3').play();
+                }, 500);
+            } else {
+                // Romantic error messages
+                const messages = [
+                    "Oops! That's not our secret code. Try 'love' and '123'",
+                    "My heart only opens for the right combination!",
+                    "Not quite right, but I still adore you! Try again?",
+                    "Even when you get it wrong, you're still perfect to me",
+                    "Wrong password, but you'll always have the key to my heart"
+                ];
+                
+                errorMessage.textContent = messages[Math.floor(Math.random() * messages.length)];
+                errorMessage.classList.remove('hidden');
+                
+                // Shake animation for wrong login
+                document.getElementById('login-page').querySelector('div').classList.add('animate-shake');
+                setTimeout(() => {
+                    document.getElementById('login-page').querySelector('div').classList.remove('animate-shake');
+                }, 500);
+            }
+        }
+        
+        // Heart animation
+        document.getElementById('heart-container').addEventListener('click', function(e) {
+            for (let i = 0; i < 10; i++) {
+                createHeart(e);
+            }
+        });
+        
+        function createHeart(e) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'px';
+            heart.style.top = Math.random() * 100 + 'px';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            this.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        
+        // Allow pressing Enter to login
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkLogin();
+            }
+        });
+    </script>
+</body>
+</html>
