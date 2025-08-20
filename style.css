@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Short+Stack&display=swap");
+
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
+
+.font-scrapbook {
+  font-family: "Short Stack", cursive;
+}
+
+.heart {
+  position: absolute;
+  pointer-events: none;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.card {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid {
+  background: white;
+  padding: 1rem 1rem 2rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg);
+}
+
+.calendar-day {
+  transition: all 0.3s ease;
+}
+
+.calendar-day:hover {
+  transform: scale(1.1);
+  background-color: #f9a8d4;
+}
+
+.special-date {
+  background-color: #f472b6;
+  color: white;
+  font-weight: bold;
+}

@@ -5,66 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Love Scrapbook</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Short+Stack&display=swap');
-        
-        .font-dancing {
-            font-family: 'Dancing Script', cursive;
-        }
-        
-        .font-scrapbook {
-            font-family: 'Short Stack', cursive;
-        }
-        
-        .heart {
-            position: absolute;
-            pointer-events: none;
-            animation: fall 4s linear forwards;
-        }
-        
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        .card {
-            transition: all 0.3s ease;
-            transform-style: preserve-3d;
-        }
-        
-        .card:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .polaroid {
-            background: white;
-            padding: 1rem 1rem 2rem 1rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transform: rotate(-2deg);
-        }
-        
-        .polaroid:hover {
-            transform: rotate(0deg);
-        }
-        
-        .calendar-day {
-            transition: all 0.3s ease;
-        }
-        
-        .calendar-day:hover {
-            transform: scale(1.1);
-            background-color: #f9a8d4;
-        }
-        
-        .special-date {
-            background-color: #f472b6;
-            color: white;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-pink-50 min-h-screen font-scrapbook">
     <!-- Login Page -->
@@ -241,77 +182,6 @@
             <p>Made with ❤️ for the most wonderful person in my life</p>
         </footer>
     </div>
-    
-    <script>
-        function checkLogin() {
-            const username = document.getElementById('username').value.toLowerCase();
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-            
-            // Our secret login
-            if (username === 'love' && password === '123') {
-                // Hide login page with animation
-                document.getElementById('login-page').style.opacity = '0';
-                document.getElementById('login-page').style.pointerEvents = 'none';
-                
-                // Show scrapbook after animation completes
-                setTimeout(() => {
-                    document.getElementById('login-page').classList.add('hidden');
-                    document.getElementById('scrapbook-page').classList.remove('hidden');
-                    
-                    // Start playing romantic background music (optional)
-                    // new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3').play();
-                }, 500);
-            } else {
-                // Romantic error messages
-                const messages = [
-                    "Oops! That's not our secret code. Try 'love' and '123'",
-                    "My heart only opens for the right combination!",
-                    "Not quite right, but I still adore you! Try again?",
-                    "Even when you get it wrong, you're still perfect to me",
-                    "Wrong password, but you'll always have the key to my heart"
-                ];
-                
-                errorMessage.textContent = messages[Math.floor(Math.random() * messages.length)];
-                errorMessage.classList.remove('hidden');
-                
-                // Shake animation for wrong login
-                document.getElementById('login-page').querySelector('div').classList.add('animate-shake');
-                setTimeout(() => {
-                    document.getElementById('login-page').querySelector('div').classList.remove('animate-shake');
-                }, 500);
-            }
-        }
-        
-        // Heart animation
-        document.getElementById('heart-container').addEventListener('click', function(e) {
-            for (let i = 0; i < 10; i++) {
-                createHeart(e);
-            }
-        });
-        
-        function createHeart(e) {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'px';
-            heart.style.top = Math.random() * 100 + 'px';
-            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            
-            this.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 4000);
-        }
-        
-        // Allow pressing Enter to login
-        document.getElementById('password').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkLogin();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
