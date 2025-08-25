@@ -37,7 +37,7 @@
   background: white;
   padding: 1rem 1rem 2rem 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
 }
 
 .polaroid:hover {
@@ -59,6 +59,15 @@
   font-weight: bold;
 }
 
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border: 2px solid white;
+}
+
 /* Animasi Fade In */
 .fade-in {
   opacity: 0;
@@ -74,15 +83,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1rem auto;
-  border: 2px solid white;
 }
 
 /* Animasi Pop Up */
@@ -213,7 +213,7 @@
 .message-body h2 {
   margin: 0;
   font-family: "Nanum Pen Script", cursive; /* Font tulisan tangan */
-  font-size: 2.5rem;
+  font-size: 1rem;
   color: #c2185b;
 }
 
