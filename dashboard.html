@@ -6,272 +6,41 @@
     <title>My Love Scrapbook</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="assets/s6.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
   <body class="bg-pink-50 min-h-screen font-scrapbook">
+    <!-- music -->
     <div id="music">
-      <!-- Floating Music Button -->
       <div class="music-float">
-        <button
-          id="musicToggle"
-          class="btn btn-success btn-lg rounded-circle"
-          target="_blank"
-        >
+        <button id="music-toggle" class="btn btn-success btn-lg rounded-circle">
           <i id="musicIcon" class="fas fa-play"></i>
         </button>
       </div>
-
-      <!-- Audio Player (hidden) -->
-      <audio id="bgMusic" loop>
-        <source src="assets/blue (instrumental).mp3" type="audio/mpeg" />
+      <audio id="bg-music" preload="none" loop hidden>
+        <source src="assets/blue_instrumental.mp3" type="audio/mpeg" />
       </audio>
     </div>
 
-    <div class="p-4 md:p-8 fade-in">
-      <header class="text-center mb-8">
-        <h1 class="text-4xl md:text-5xl font-dancing text-pink-600">
-          Our Love Scrapbook
-        </h1>
-        <p class="text-lg text-pink-400">Every moment with you is special ❤️</p>
-      </header>
-
-      <!-- Grid of cards (copy dari scrapbook sebelumnya) -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-      >
-        <!-- Envelope -->
-        <div
-          id="envelopeThumbnail"
-          class="card bg-white rounded-xl p-4 shadow-md"
+    <!-- back button -->
+    <div id="back">
+      <div id="backButtonContainer" class="back-float hidden">
+        <button
+          onclick="loadPage('pages/home.html')"
+          class="btn btn-success btn-lg rounded-circle"
         >
-          <div
-            class="absolute top-0 right-0 w-16 h-16 bg-purple-200 rounded-bl-full"
-          ></div>
-          <div
-            class="absolute bottom-0 left-0 w-16 h-16 bg-pink-200 rounded-tr-full"
-          ></div>
-          <div class="relative z-10">
-            <h2 class="font-dancing text-3xl text-pink-700 mb-4">
-              Wahh ada pesan nih, coba buka sayangg!!!
-            </h2>
-            <div class="relative z-10 text-center">
-              <img
-                id="envelopeThumb"
-                src="https://i.pinimg.com/736x/aa/d3/7e/aad37ebe89925580d2c0002932342bc3.jpg"
-                alt="Pink Envelope"
-                class="rounded-lg shadow-md mx-auto w-80"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Gallery Card -->
-        <a href="gallery.html" class="block">
-          <div
-            class="card bg-white rounded-xl p-4 shadow-md cursor-pointer hover:shadow-lg transition"
-          >
-            <div class="polaroid">
-              <img
-                src="assets/lego2.png"
-                class="w-full h-64 object-cover rounded"
-              />
-              <p class="text-center mt-2 font-dancing text-xl text-gray-700">
-                You & Me
-              </p>
-            </div>
-            <p class="mt-4 text-gray-600">
-              This is where our photo would be. Imagine us smiling together
-              here! 🙈
-            </p>
-          </div>
-        </a>
-
-        <!-- Love Note Card -->
-        <div
-          class="card bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow-md relative overflow-hidden"
-        >
-          <div
-            class="absolute top-0 right-0 w-16 h-16 bg-pink-200 rounded-bl-full"
-          ></div>
-          <div
-            class="absolute bottom-0 left-0 w-16 h-16 bg-purple-200 rounded-tr-full"
-          ></div>
-          <div class="relative z-10">
-            <h2 class="font-dancing text-3xl text-pink-700 mb-4">
-              My Love Note
-            </h2>
-            <p class="text-lg leading-relaxed">
-              Every day with you is a beautiful adventure. You make my heart
-              skip a beat with just your smile. I cherish every moment we spend
-              together, no matter how small. I love you more than words can
-              express. ❤️
-            </p>
-          </div>
-        </div>
-
-        <!-- Calendar Card -->
-        <div class="card bg-white rounded-xl p-4 shadow-md">
-          <h2 class="font-dancing text-3xl text-center text-pink-700 mb-4">
-            Our Special Dates
-          </h2>
-          <div class="grid grid-cols-7 gap-1 text-center">
-            <div class="font-bold text-pink-500">S</div>
-            <div class="font-bold text-pink-500">M</div>
-            <div class="font-bold text-pink-500">T</div>
-            <div class="font-bold text-pink-500">W</div>
-            <div class="font-bold text-pink-500">T</div>
-            <div class="font-bold text-pink-500">F</div>
-            <div class="font-bold text-pink-500">S</div>
-
-            <!-- Empty days -->
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded">1</div>
-
-            <!-- Week 2 -->
-            <div class="calendar-day py-1 rounded">2</div>
-            <div class="calendar-day py-1 rounded">3</div>
-            <div class="calendar-day py-1 rounded">4</div>
-            <div class="calendar-day py-1 rounded">5</div>
-            <div class="calendar-day py-1 rounded">6</div>
-            <div class="calendar-day py-1 rounded">7</div>
-            <div class="calendar-day py-1 rounded">8</div>
-
-            <!-- Week 3 -->
-            <div class="calendar-day py-1 rounded">9</div>
-            <div class="calendar-day py-1 rounded">10</div>
-            <div class="calendar-day py-1 rounded">11</div>
-            <div class="calendar-day py-1 rounded">12</div>
-            <div class="calendar-day py-1 rounded">13</div>
-            <div class="calendar-day py-1 rounded">14</div>
-            <div
-              class="calendar-day py-1 rounded special-date"
-              title="Valentine's Day"
-            >
-              15
-            </div>
-
-            <!-- Week 4 -->
-            <div class="calendar-day py-1 rounded">16</div>
-            <div class="calendar-day py-1 rounded">17</div>
-            <div class="calendar-day py-1 rounded">18</div>
-            <div class="calendar-day py-1 rounded">19</div>
-            <div class="calendar-day py-1 rounded">20</div>
-            <div class="calendar-day py-1 rounded">21</div>
-            <div class="calendar-day py-1 rounded">22</div>
-
-            <!-- Week 5 -->
-            <div class="calendar-day py-1 rounded">23</div>
-            <div class="calendar-day py-1 rounded">24</div>
-            <div class="calendar-day py-1 rounded">25</div>
-            <div class="calendar-day py-1 rounded">26</div>
-            <div class="calendar-day py-1 rounded">27</div>
-            <div class="calendar-day py-1 rounded">28</div>
-            <div class="calendar-day py-1 rounded">29</div>
-
-            <!-- Week 6 -->
-            <div class="calendar-day py-1 rounded">30</div>
-            <div class="calendar-day py-1 rounded">31</div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-            <div class="calendar-day py-1 rounded"></div>
-          </div>
-          <p class="mt-4 text-center text-pink-600">
-            Hover over the 15th - our special day!
-          </p>
-        </div>
-
-        <!-- Memory Card -->
-        <div
-          class="card bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl p-6 shadow-md"
-        >
-          <h2 class="font-dancing text-3xl text-purple-700 mb-4">
-            Sweet Memories
-          </h2>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <span class="text-pink-500 mr-2">❤️</span>
-              <span>The first time we met</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-pink-500 mr-2">❤️</span>
-              <span>Our first date at the coffee shop</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-pink-500 mr-2">❤️</span>
-              <span>That rainy day we spent watching movies</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-pink-500 mr-2">❤️</span>
-              <span>When you surprised me with breakfast in bed</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-pink-500 mr-2">❤️</span>
-              <span>Every "I love you" you've ever said</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Heart Animation Card -->
-        <div
-          class="card bg-white rounded-xl p-4 shadow-md relative overflow-hidden"
-          id="heart-container"
-        >
-          <h2 class="font-dancing text-3xl text-center text-pink-700 mb-4">
-            My Heart for You
-          </h2>
-          <p class="text-center mb-4">
-            Click anywhere in this card to make hearts appear!
-          </p>
-          <div class="flex justify-center">
-            <div class="text-6xl animate-bounce" style="animation-duration: 2s">
-              ❤️
-            </div>
-          </div>
-        </div>
-
-        <!-- Future Dreams Card -->
-        <!-- <div
-          class="card bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl p-6 shadow-md"
-        >
-          <h2 class="font-dancing text-3xl text-blue-700 mb-4">Our Future</h2>
-          <p class="mb-4">
-            I can't wait for all the adventures we'll have together:
-          </p>
-          <div class="bg-white bg-opacity-50 rounded-lg p-4">
-            <p class="text-sm italic">
-              "Someday we'll travel the world together, have cozy Sunday
-              mornings, and grow old laughing at our inside jokes. Every day
-              with you is a dream come true."
-            </p>
-          </div>
-          <div class="mt-4 flex justify-end">
-            <span class="font-dancing text-xl text-blue-600"
-              >Forever yours</span
-            >
-          </div>
-        </div> -->
+          <i class="fas fa-arrow-left"></i>
+        </button>
       </div>
-
-      <footer class="text-center mt-12 mb-4 text-pink-400">
-        <p>
-          Made with ❤️ for the most wonderful person in my life, Falola Dje
-          Veronica 🥰
-        </p>
-      </footer>
     </div>
 
-    <div id="modal pop up">
+    <!-- Konten Dinamis -->
+    <div id="content" class="p-4 md:p-8 fade-in"></div>
+
+    <div id="modal-popup">
       <!-- Modal Pop Up 1 -->
       <div
         id="envelopePopup"
@@ -341,79 +110,12 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
-    <!-- script envelope -->
+    <script src="js/script.js"></script>
     <script>
-      const thumb = document.getElementById("envelopeThumb");
-      const popup = document.getElementById("envelopePopup");
-      const closeBtn = document.getElementById("closePopup");
-
-      thumb.addEventListener("click", () => {
-        popup.classList.remove("hidden");
-      });
-
-      closeBtn.addEventListener("click", () => {
-        popup.classList.add("hidden");
-      });
-
-      document
-        .getElementById("openPopup")
-        .addEventListener("click", function () {
-          document.getElementById("envelopePopup").classList.add("hidden");
-          document.getElementById("messagePopup").classList.remove("hidden");
-        });
-
-      document
-        .getElementById("closePopup")
-        .addEventListener("click", function () {
-          document.getElementById("envelopePopup").classList.add("hidden");
-        });
-
-      document
-        .getElementById("backToStart")
-        .addEventListener("click", function () {
-          // Sembunyikan messagePopup
-          document.getElementById("messagePopup").classList.add("hidden");
-
-          // Optional: juga tutup overlay hitam biar layar kembali normal
-          document.getElementById("envelopePopup").classList.add("hidden");
-        });
+      // load pertama kali langsung ke home
+      loadPage("pages/home.html");
     </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const music = document.getElementById("bgMusic");
-        const toggleBtn = document.getElementById("musicToggle");
-        const icon = document.getElementById("musicIcon");
-
-        music.volume = 0.2;
-
-        // autoplay hanya bisa jalan setelah user interaksi
-        document.addEventListener(
-          "click",
-          () => {
-            if (music.paused) {
-              music.play();
-              icon.classList.remove("fa-play");
-              icon.classList.add("fa-pause");
-            }
-          },
-          { once: true }
-        );
-
-        // toggle play/pause via button
-        toggleBtn.addEventListener("click", () => {
-          if (music.paused) {
-            music.play();
-            icon.classList.remove("fa-play");
-            icon.classList.add("fa-pause");
-          } else {
-            music.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-play");
-          }
-        });
-      });
-    </script>
+    <script src="js/music.js"></script>
+    <script src="js/envelope.js"></script>
   </body>
 </html>
