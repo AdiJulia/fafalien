@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Love Scrapbook</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="assets/s6.png" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body class="bg-pink-50 min-h-screen font-scrapbook">
+    <div id="music">
+      <!-- Floating Music Button -->
+      <div class="music-float">
+        <button
+          id="musicToggle"
+          class="btn btn-success btn-lg rounded-circle"
+          target="_blank"
+        >
+          <i id="musicIcon" class="fas fa-play"></i>
+        </button>
+      </div>
+
+      <!-- Audio Player (hidden) -->
+      <audio id="bgMusic" loop>
+        <source src="assets/blue (instrumental).mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
     <div class="p-4 md:p-8 fade-in">
       <header class="text-center mb-8">
         <h1 class="text-4xl md:text-5xl font-dancing text-pink-600">
@@ -18,15 +41,19 @@
 
       <!-- Grid of cards (copy dari scrapbook sebelumnya) -->
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+      >
         <!-- Envelope -->
         <div
           id="envelopeThumbnail"
-          class="card bg-white rounded-xl p-4 shadow-md">
+          class="card bg-white rounded-xl p-4 shadow-md"
+        >
           <div
-            class="absolute top-0 right-0 w-16 h-16 bg-purple-200 rounded-bl-full"></div>
+            class="absolute top-0 right-0 w-16 h-16 bg-purple-200 rounded-bl-full"
+          ></div>
           <div
-            class="absolute bottom-0 left-0 w-16 h-16 bg-pink-200 rounded-tr-full"></div>
+            class="absolute bottom-0 left-0 w-16 h-16 bg-pink-200 rounded-tr-full"
+          ></div>
           <div class="relative z-10">
             <h2 class="font-dancing text-3xl text-pink-700 mb-4">
               Wahh ada pesan nih, coba buka sayangg!!!
@@ -36,7 +63,8 @@
                 id="envelopeThumb"
                 src="https://i.pinimg.com/736x/aa/d3/7e/aad37ebe89925580d2c0002932342bc3.jpg"
                 alt="Pink Envelope"
-                class="rounded-lg shadow-md mx-auto w-80" />
+                class="rounded-lg shadow-md mx-auto w-80"
+              />
             </div>
           </div>
         </div>
@@ -44,11 +72,13 @@
         <!-- Gallery Card -->
         <a href="gallery.html" class="block">
           <div
-            class="card bg-white rounded-xl p-4 shadow-md cursor-pointer hover:shadow-lg transition">
+            class="card bg-white rounded-xl p-4 shadow-md cursor-pointer hover:shadow-lg transition"
+          >
             <div class="polaroid">
               <img
                 src="assets/lego2.png"
-                class="w-full h-64 object-cover rounded" />
+                class="w-full h-64 object-cover rounded"
+              />
               <p class="text-center mt-2 font-dancing text-xl text-gray-700">
                 You & Me
               </p>
@@ -62,11 +92,14 @@
 
         <!-- Love Note Card -->
         <div
-          class="card bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow-md relative overflow-hidden">
+          class="card bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow-md relative overflow-hidden"
+        >
           <div
-            class="absolute top-0 right-0 w-16 h-16 bg-pink-200 rounded-bl-full"></div>
+            class="absolute top-0 right-0 w-16 h-16 bg-pink-200 rounded-bl-full"
+          ></div>
           <div
-            class="absolute bottom-0 left-0 w-16 h-16 bg-purple-200 rounded-tr-full"></div>
+            class="absolute bottom-0 left-0 w-16 h-16 bg-purple-200 rounded-tr-full"
+          ></div>
           <div class="relative z-10">
             <h2 class="font-dancing text-3xl text-pink-700 mb-4">
               My Love Note
@@ -121,7 +154,8 @@
             <div class="calendar-day py-1 rounded">14</div>
             <div
               class="calendar-day py-1 rounded special-date"
-              title="Valentine's Day">
+              title="Valentine's Day"
+            >
               15
             </div>
 
@@ -159,7 +193,8 @@
 
         <!-- Memory Card -->
         <div
-          class="card bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl p-6 shadow-md">
+          class="card bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl p-6 shadow-md"
+        >
           <h2 class="font-dancing text-3xl text-purple-700 mb-4">
             Sweet Memories
           </h2>
@@ -190,7 +225,8 @@
         <!-- Heart Animation Card -->
         <div
           class="card bg-white rounded-xl p-4 shadow-md relative overflow-hidden"
-          id="heart-container">
+          id="heart-container"
+        >
           <h2 class="font-dancing text-3xl text-center text-pink-700 mb-4">
             My Heart for You
           </h2>
@@ -239,13 +275,15 @@
       <!-- Modal Pop Up 1 -->
       <div
         id="envelopePopup"
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 fade-in">
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 fade-in"
+      >
         <div class="popup-container">
           <!-- Envelope -->
           <div class="envelope-display">
             <img
               src="https://i.pinimg.com/736x/aa/d3/7e/aad37ebe89925580d2c0002932342bc3.jpg"
-              alt="Pink Envelope" />
+              alt="Pink Envelope"
+            />
           </div>
 
           <!-- Pertanyaan -->
@@ -265,7 +303,8 @@
       <!-- Modal Pop Up 2 -->
       <div
         id="messagePopup"
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 fade-in">
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 fade-in"
+      >
         <div class="popup-container">
           <div class="message-header">
             <h1>Ooo.. ada pesan buat falolaa cantekk</h1>
@@ -339,6 +378,42 @@
           // Optional: juga tutup overlay hitam biar layar kembali normal
           document.getElementById("envelopePopup").classList.add("hidden");
         });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const music = document.getElementById("bgMusic");
+        const toggleBtn = document.getElementById("musicToggle");
+        const icon = document.getElementById("musicIcon");
+
+        music.volume = 0.2;
+
+        // autoplay hanya bisa jalan setelah user interaksi
+        document.addEventListener(
+          "click",
+          () => {
+            if (music.paused) {
+              music.play();
+              icon.classList.remove("fa-play");
+              icon.classList.add("fa-pause");
+            }
+          },
+          { once: true }
+        );
+
+        // toggle play/pause via button
+        toggleBtn.addEventListener("click", () => {
+          if (music.paused) {
+            music.play();
+            icon.classList.remove("fa-play");
+            icon.classList.add("fa-pause");
+          } else {
+            music.pause();
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-play");
+          }
+        });
+      });
     </script>
   </body>
 </html>
