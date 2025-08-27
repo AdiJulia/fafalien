@@ -1,0 +1,69 @@
+<div class="max-w-3xl mx-auto">
+  <header class="text-center mb-8">
+    <h1 class="text-4xl md:text-5xl font-dancing text-pink-600">
+      Web of Wishes 😇
+    </h1>
+    <p class="text-lg text-pink-400">
+      Kalau semisal sayangku lagi kangen atau lagi kerasa perasaan apapun,
+    </p>
+    <p class="text-lg text-pink-400">
+      kita klik apa yang dirasain sayangku yaa 🙈
+    </p>
+  </header>
+
+  <!-- Category Buttons -->
+  <div class="flex justify-center gap-4 mb-12 flex-wrap">
+    <button
+      id="sad-btn"
+      class="px-6 py-2 rounded-full bg-yellow-400 hover:bg-yellow-500 text-white font-medium shadow-md transition-all"
+    >
+      Sedih
+    </button>
+    <button
+      id="happy-btn"
+      class="px-6 py-2 rounded-full bg-green-400 hover:bg-green-500 text-white font-medium shadow-md transition-all"
+    >
+      Bahagia
+    </button>
+    <button
+      id="angry-btn"
+      class="px-6 py-2 rounded-full bg-red-400 hover:bg-red-500 text-white font-medium shadow-md transition-all"
+    >
+      Marah
+    </button>
+    <button
+      id="tired-btn"
+      class="px-6 py-2 rounded-full bg-blue-400 hover:bg-blue-500 text-white font-medium shadow-md transition-all"
+    >
+      Capek
+    </button>
+  </div>
+
+  <!-- Jar Image -->
+  <div class="flex justify-center mb-8">
+    <img
+      id="jar"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48c3R5bGU+LnN0MHtmaWxsOiNGRkZGRkY7c3Ryb2tlOiNGRkQxQjU7c3Ryb2tlLXdpZHRoOjJ9LnN0MXtmaWxsOiNGQ0VBRUU7c3Ryb2tlOiNGRkQxQjU7c3Ryb2tlLXdpZHRoOjJ9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUwIDUwYzAgMjcuNi0yMi40IDUwLTUwIDUwcy01MC0yMi40LTUwLTUwVjI1aDEwMHYyNXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTUwIDUwdjEwMGMwIDI3LjYtMjIuNCA1MC01MCA1MHMtNTAtMjIuNC01MC01MFY1MGgxMDB6Ii8+PC9zdmc+"
+      alt="Wish Jar"
+      class="w-48 h-48 md:w-64 md:h-64 transition-all"
+    />
+  </div>
+
+  <!-- Popup Overlay -->
+  <div
+    id="popup-overlay"
+    class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center hidden z-[2000]"
+  >
+    <div
+      class="bg-white rounded-lg p-6 max-w-sm w-full mx-4 popup relative z-[2001]"
+    >
+      <div id="popup-content" class="text-center mb-4 text-lg"></div>
+      <button
+        id="close-popup"
+        class="w-full py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-md transition-colors"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>

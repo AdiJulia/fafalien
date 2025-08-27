@@ -3,6 +3,8 @@ const bgMusic = document.getElementById("bg-music");
 const toggleBtn = document.getElementById("music-toggle");
 let musicStarted = false;
 
+bgMusic.volume = 0.3;
+
 // Fungsi toggle manual lewat tombol
 toggleBtn.addEventListener("click", () => {
   if (bgMusic.paused) {

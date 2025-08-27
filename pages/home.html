@@ -7,7 +7,7 @@
 
 <!-- Grid of cards (copy dari scrapbook sebelumnya) -->
 <div
-  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto fade-in"
 >
   <!-- Envelope -->
   <div id="envelopeThumbnail" class="card bg-white rounded-xl p-4 shadow-md">
@@ -32,42 +32,53 @@
     </div>
   </div>
 
+  <!-- Web Of Wishes -->
+  <a href="#" onclick="loadPage('pages/webwishes.html')">
+    <div
+      class="card bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow-md relative overflow-hidden"
+    >
+      <div class="relative z-10">
+        <h2 class="font-dancing text-3xl text-pink-700 mb-4">
+          Our Website of Wishes✨
+        </h2>
+        <p class="text-lg leading-relaxed">
+          Every day with you is a beautiful adventure. You make my heart skip a
+          beat with just your smile. I cherish every moment we spend together,
+          no matter how small. I love you more than words can express. ❤️
+        </p>
+      </div>
+      <div class="relative z-10 text-center">
+        <br><br>
+        <div
+          class="w-full bg-pink-400 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors font-bold mt-4 "
+        >
+          <p>Pencet buat liat lainnya wak🤗</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
   <!-- Gallery Card -->
-  <a href="#" onclick="loadPage('pages/gallery.html')" class="fade-in">
+  <a href="#" onclick="loadPage('pages/gallery.html')">
     <div
       class="card bg-white rounded-xl p-4 shadow-md cursor-pointer hover:shadow-lg transition"
     >
       <div class="polaroid-left">
-        <img src="../assets/lego2.png" class="w-full h-64 object-cover rounded" />
+        <img
+          src="../assets/lego2.png"
+          class="w-full h-64 object-cover rounded"
+        />
         <p class="text-center mt-2 font-dancing text-xl text-gray-700">
           You & Me
         </p>
       </div>
+      <br>
+      <br>
       <p class="mt-4 text-gray-600">
         This is where our photo would be. Imagine us smiling together here! 🙈
       </p>
     </div>
   </a>
-
-  <!-- Love Note Card -->
-  <div
-    class="card bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow-md relative overflow-hidden"
-  >
-    <div
-      class="absolute top-0 right-0 w-16 h-16 bg-pink-200 rounded-bl-full"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-16 h-16 bg-purple-200 rounded-tr-full"
-    ></div>
-    <div class="relative z-10">
-      <h2 class="font-dancing text-3xl text-pink-700 mb-4">My Love Note</h2>
-      <p class="text-lg leading-relaxed">
-        Every day with you is a beautiful adventure. You make my heart skip a
-        beat with just your smile. I cherish every moment we spend together, no
-        matter how small. I love you more than words can express. ❤️
-      </p>
-    </div>
-  </div>
 
   <!-- Calendar Card -->
   <div class="card bg-white rounded-xl p-4 shadow-md">
@@ -195,26 +206,22 @@
   </div>
 
   <!-- Future Dreams Card -->
-  <!-- <div
-          class="card bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl p-6 shadow-md"
-        >
-          <h2 class="font-dancing text-3xl text-blue-700 mb-4">Our Future</h2>
-          <p class="mb-4">
-            I can't wait for all the adventures we'll have together:
-          </p>
-          <div class="bg-white bg-opacity-50 rounded-lg p-4">
-            <p class="text-sm italic">
-              "Someday we'll travel the world together, have cozy Sunday
-              mornings, and grow old laughing at our inside jokes. Every day
-              with you is a dream come true."
-            </p>
-          </div>
-          <div class="mt-4 flex justify-end">
-            <span class="font-dancing text-xl text-blue-600"
-              >Forever yours</span
-            >
-          </div>
-        </div> -->
+  <div
+    class="card bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl p-6 shadow-md"
+  >
+    <h2 class="font-dancing text-3xl text-blue-700 mb-4">Our Future</h2>
+    <p class="mb-4">I can't wait for all the adventures we'll have together:</p>
+    <div class="bg-white bg-opacity-50 rounded-lg p-4">
+      <p class="text-sm italic">
+        "Someday we'll travel the world together, have cozy Sunday mornings, and
+        grow old laughing at our inside jokes. Every day with you is a dream
+        come true."
+      </p>
+    </div>
+    <div class="mt-4 flex justify-end">
+      <span class="font-dancing text-xl text-blue-600">Forever yours</span>
+    </div>
+  </div>
 </div>
 
 <footer class="text-center mt-12 mb-4 text-pink-400">

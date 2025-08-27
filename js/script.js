@@ -18,21 +18,22 @@ async function loadPage(page) {
 
     // === cek apakah gallery ===
     const backBtn = document.getElementById("backButtonContainer");
-    if (page.includes("gallery.html")) {
+    if (page.includes("gallery.html") || page.includes("webwishes.html")) {
       backBtn.classList.remove("hidden");
     } else {
       backBtn.classList.add("hidden");
     }
 
-    // kalau ada envelope
     if (page.includes("home.html") && typeof initEnvelope === "function") {
       initEnvelope();
+    }
+    if (page.includes("webwishes.html") && typeof initWishes === "function") {
+      initWishes();
     }
   } catch (err) {
     document.getElementById("content").innerHTML = "<p>Error loading page.</p>";
   }
 }
-
 
 // Biar tombol back/forward browser jalan
 window.addEventListener("popstate", (event) => {
