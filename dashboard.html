@@ -44,6 +44,8 @@
     <!-- Konten Dinamis -->
     <div id="content" class="p-4 md:p-8 fade-in"></div>
 
+    <div id="player-container"></div>
+
     <div id="modal-popup">
       <!-- Modal Pop Up 1 -->
       <div
@@ -98,12 +100,6 @@
               error? Aut delectus rerum quae sunt, quas esse provident veritatis
               soluta cum, perferendis totam vitae?
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis, aperiam dolor officia voluptatum dolores velit
-              error? Aut delectus rerum quae sunt, quas esse provident veritatis
-              soluta cum, perferendis totam vitae?
-            </p>
           </div>
           <div class="message-footer">
             <button id="backToStart" class="btn-start-over">
@@ -119,8 +115,10 @@
       // load pertama kali langsung ke home
       loadPage("pages/home.html");
     </script>
-    <script src="js/music.js"></script>
+
+    <script src="js/audio.js"></script>
     <script src="js/envelope.js"></script>
     <script src="js/wishes.js"></script>
+    <script src="js/music.js"></script>
   </body>
 </html>

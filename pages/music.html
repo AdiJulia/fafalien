@@ -1,0 +1,65 @@
+<div class="max-w-2xl mx-auto p-4 md:p-6">
+  <header class="text-center mb-8">
+    <h1 class="text-4xl md:text-5xl font-dancing text-pink-600">
+      Falola's Top 10 Songs
+    </h1>
+  </header>
+
+  <div class="grid grid-cols-1 gap-4 mb-12" id="playlist">
+    <!-- Playlist items will be inserted here by JavaScript -->
+  </div>
+</div>
+
+<!-- Music Player Bar harus di luar -->
+<div
+  id="music-player-bar" class="music-player-bar fixed bottom-0 left-0 right-0 bg-gradient-to-r from-pink-100 to-purple-100 shadow-md rounded-t-xl p-4 border-t border-pink-200 z-50"
+>
+  <div class="max-w-2xl mx-auto">
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center space-x-3">
+        <img
+          id="current-song-cover"
+          src="https://cdn.pixabay.com/photo/2017/03/25/17/55/color-2174045_640.png"
+          alt="Album Cover"
+          class="w-10 h-10 rounded-md"
+        />
+        <div>
+          <h3 id="current-song-title" class="font-medium text-pink-800">
+            No song selected
+          </h3>
+          <p id="current-song-artist" class="text-xs text-pink-600">
+            Select a song to play
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button id="prev-btn" class="text-pink-600 hover:text-pink-800">
+          <i class="fas fa-step-backward"></i>
+        </button>
+        <button
+          id="play-btn"
+          class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700"
+        >
+          <i class="fas fa-play" id="play-icon"></i>
+        </button>
+        <button id="next-btn" class="text-pink-600 hover:text-pink-800">
+          <i class="fas fa-step-forward"></i>
+        </button>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span id="current-time" class="text-xs text-pink-600">0:00</span>
+      <input
+        type="range"
+        id="progress-bar"
+        min="0"
+        max="100"
+        value="0"
+        class="flex-1 h-1 rounded-full appearance-none bg-pink-300 accent-pink-600"
+      />
+      <span id="duration" class="text-xs text-pink-600">0:00</span>
+    </div>
+  </div>
+</div>
+
+<audio id="audio-player"></audio>
