@@ -33,7 +33,7 @@ async function loadPage(page) {
       "?page=" + page.replace("pages/", "").replace(".html", "")
     );
 
-    // === cek apakah gallery ===
+    // === cek untuk button back ===
     const backBtn = document.getElementById("backButtonContainer");
     if (
       page.includes("gallery.html") ||
@@ -43,6 +43,15 @@ async function loadPage(page) {
       backBtn.classList.remove("hidden");
     } else {
       backBtn.classList.add("hidden");
+    }
+
+    const shutdownBtn = document.getElementById("shutdownButtonContainer");
+    if (
+      page.includes("home.html")
+    ) {
+      shutdownBtn.classList.remove("hidden");
+    } else {
+      shutdownBtn.classList.add("hidden");
     }
 
     // === Tambah body class khusus music.html ===

@@ -25,7 +25,7 @@
         </button>
       </div>
       <audio id="bg-music" preload="none" loop hidden>
-        <!-- <source src="assets/blue_instrumental.mp3" type="audio/mpeg" /> -->
+        <source src="assets/blue_instrumental.mp3" type="audio/mpeg" />
       </audio>
     </div>
 
@@ -37,6 +37,15 @@
           class="btn btn-success btn-lg rounded-circle"
         >
           <i class="fas fa-arrow-left"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- shutdown button -->
+    <div id="shutdown">
+      <div id="shutdownButtonContainer" class="shutdown-float">
+        <button id="logoutBtn" class="btn btn-success btn-lg rounded-circle">
+          <i class="fa-solid fa-power-off"></i>
         </button>
       </div>
     </div>
@@ -112,7 +121,7 @@
 
     <!-- popup calendar -->
     <div
-      id="messagePopup"
+      id="calendarMessagePopup"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50"
     >
       <div
@@ -138,7 +147,7 @@
         </div>
         <div class="message-footer mt-6">
           <button
-            id="closePopup"
+            id="calendarCloseBtn"
             class="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition"
           >
             ASIKKKK Kita tutup buat next 🙈
@@ -153,10 +162,17 @@
       loadPage("pages/home.html");
     </script>
 
+    <script src="js/script_logout.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/envelope.js"></script>
     <script src="js/wishes.js"></script>
     <script src="js/music.js"></script>
     <script src="js/calendar.js"></script>
+
+    <script>
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "index.html";
+      }
+    </script>
   </body>
 </html>

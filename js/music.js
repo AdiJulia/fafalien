@@ -121,6 +121,9 @@ function initMusic() {
   }
 
   function playSong(index) {
+    // 🔹 Hentikan musik background dulu
+    if (typeof stopBgMusic === "function") stopBgMusic();
+
     if (index === currentSongIndex && isPlaying) {
       pauseSong();
       return;

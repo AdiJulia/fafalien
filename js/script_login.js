@@ -11,6 +11,7 @@ function checkLogin() {
 
     // tombol continue → redirect ke dashboard
     document.getElementById("continueBtn").addEventListener("click", () => {
+      localStorage.setItem("isLoggedIn", "true"); // tandai sudah login
       window.location.href = "dashboard.html";
     });
   } else if (username != "love") {

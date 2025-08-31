@@ -295,6 +295,14 @@
   z-index: 1000;
 }
 
+/* Shutdown Float */
+.shutdown-float {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 1000;
+}
+
 .music-page .music-float {
   position: fixed;
   bottom: 130px;
