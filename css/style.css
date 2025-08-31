@@ -58,16 +58,17 @@
 /* calendar */
 
 .calendar-day {
-  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
-
 .calendar-day:hover {
-  transform: scale(1.1);
-  background-color: #f9a8d4;
+  background-color: #fce7f3; /* pink-100 */
+  transform: scale(1.05);
 }
-
 .special-date {
-  background-color: #f472b6;
+  background-color: #f472b6; /* pink-400 */
   color: white;
   font-weight: bold;
 }
@@ -385,4 +386,25 @@ input[type="range"]::-webkit-slider-thumb {
   overflow: visible;
   position: static;
   padding-bottom: 70px;
+}
+
+.music-card {
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+.music-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.music-card:active {
+  transform: scale(0.98);
+}
+.play-btn {
+  transition: all 0.2s ease;
+}
+.play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

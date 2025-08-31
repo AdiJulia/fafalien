@@ -1,5 +1,4 @@
 // === LOADPAGE (SPA) ===
-// === LOADPAGE (SPA) ===
 async function loadPage(page) {
   try {
     if (!page.startsWith("pages/")) {
@@ -65,6 +64,9 @@ async function loadPage(page) {
     }
     if (page.includes("music.html") && typeof initMusic === "function") {
       initMusic();
+    }
+    if (page.includes("home.html") && typeof initCalendar === "function") {
+      initCalendar();
     }
   } catch (err) {
     document.getElementById("content").innerHTML = "<p>Error loading page.</p>";

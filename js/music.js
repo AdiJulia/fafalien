@@ -97,26 +97,24 @@ function initMusic() {
     playlist.forEach((song, index) => {
       const songElement = document.createElement("div");
       songElement.className =
-        "bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow flex items-center";
-      songElement.innerHTML = `
-        <div class="flex items-center w-full">
-          <span class="text-pink-600 font-medium mr-4 w-6 text-center">${song.id}</span>
-          <img src="${song.cover}" alt="${song.title}" class="w-10 h-10 rounded-md mr-3">
-          <div class="flex-1">
-            <h3 class="font-medium text-pink-800">${song.title}</h3>
-            <p class="text-xs text-pink-600">${song.artist}</p>
-          </div>
-          <button class="play-song-btn text-pink-600 hover:text-pink-800 p-2" data-index="${index}">
-            <i class="fas fa-play"></i>
-          </button>
-        </div>
-      `;
-      playlistContainer.appendChild(songElement);
-    });
+        "song-card bg-white rounded-lg shadow-md p-4 flex items-center cursor-pointer hover:bg-pink-50 transition-colors mb-1";
+      songElement.setAttribute("data-index", index);
 
-    document.querySelectorAll(".play-song-btn").forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const index = parseInt(this.getAttribute("data-index"));
+      songElement.innerHTML = `
+      <div class="w-12 h-12 bg-pink-100 rounded-md flex items-center justify-center mr-4">
+        <i class="fas fa-music text-pink-500"></i>
+      </div>
+      <div>
+        <h3 class="font-semibold text-pink-800">${index + 1}. ${song.title}</h3>
+        <p class="text-sm text-gray-600">${song.artist}</p>
+      </div>
+    `;
+
+      // Tambahkan ke container
+      playlistContainer.appendChild(songElement);
+
+      // Klik seluruh card untuk play
+      songElement.addEventListener("click", function () {
         playSong(index);
       });
     });
