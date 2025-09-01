@@ -5,73 +5,93 @@ function initMusic() {
   const playlist = [
     {
       id: 1,
-      title: "Runtuh",
-      artist: "Feby Putri, Fiersa Besari",
-      cover: "https://i.scdn.co/image/ab67616d00001e02a3a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      title: "Too Good to Say Goodbye",
+      artist: "Bruno Mars",
+      cover: "assets/music/icon/1. Too Good to Say Goodbye.jpeg",
+      audio: "assets/music/song_list/1. Too Good to Say Goodbye.mp3",
+      icon: "assets/music/icon/1. Too Good to Say Goodbye.jpeg",
     },
     {
       id: 2,
-      title: "Sial",
-      artist: "Mahalini",
-      cover: "https://i.scdn.co/image/ab67616d00001e02b5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+      title: "Cause You Have To",
+      artist: "LANY",
+      cover:
+        "assets/music/icon/2. LANY - 'Cause You Have To (Official Lyric Video).jpeg",
+      audio:
+        "assets/music/song_list/2. LANY - 'Cause You Have To (Official Lyric Video).mp3",
+      icon: "assets/music/icon/2. LANY - 'Cause You Have To (Official Lyric Video).jpeg",
     },
     {
       id: 3,
-      title: "Tak Segampang Itu",
-      artist: "Anggi Marito",
-      cover: "https://i.scdn.co/image/ab67616d00001e02c5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+      title: "Out Of My League",
+      artist: "Fitz And The Tantrums",
+      cover:
+        "assets/music/icon/3. Fitz And The Tantrums - Out Of My League [Official Music Video].jpeg",
+      audio:
+        "assets/music/song_list/3. Fitz And The Tantrums - Out Of My League [Official Music Video].mp3",
+      icon: "assets/music/icon/3. Fitz And The Tantrums - Out Of My League [Official Music Video].jpeg",
     },
     {
       id: 4,
-      title: "Sempurna",
-      artist: "Andmesh",
-      cover: "https://i.scdn.co/image/ab67616d00001e02d5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+      title: "You",
+      artist: "Objective",
+      cover: "assets/music/icon/4. You.jpeg",
+      audio: "assets/music/song_list/4. You.mp3",
+      icon: "assets/music/icon/4. You.jpeg",
     },
     {
       id: 5,
-      title: "Hati-Hati di Jalan",
-      artist: "Tulus",
-      cover: "https://i.scdn.co/image/ab67616d00001e02e5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+      title: "Di Akhir Perang",
+      artist: "Nadin Amizah",
+      cover:
+        "assets/music/icon/5. Nadin Amizah - Di Akhir Perang (Official Lyric Video).jpeg",
+      audio:
+        "assets/music/song_list/5. Nadin Amizah - Di Akhir Perang (Official Lyric Video).mp3",
+      icon: "assets/music/icon/5. Nadin Amizah - Di Akhir Perang (Official Lyric Video).jpeg",
     },
     {
       id: 6,
-      title: "Evaluasi",
-      artist: "Hindia",
-      cover: "https://i.scdn.co/image/ab67616d00001e02f5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+      title: "Multo",
+      artist: "Cup of Joe",
+      cover:
+        "assets/music/icon/6. Multo - Cup of Joe (Official Music Video).jpeg",
+      audio:
+        "assets/music/song_list/6. Multo - Cup of Joe (Official Music Video).mp3",
+      icon: "assets/music/icon/6. Multo - Cup of Joe (Official Music Video).jpeg",
     },
     {
       id: 7,
-      title: "Bertaut",
-      artist: "Nadin Amizah",
-      cover: "https://i.scdn.co/image/ab67616d00001e02g5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+      title: "Peppermint",
+      artist: "Che Ecru",
+      cover: "assets/music/icon/7. Che Ecru - Peppermint.jpeg",
+      audio: "assets/music/song_list/7. Che Ecru - Peppermint.mp3",
+      icon: "assets/music/icon/7. Che Ecru - Peppermint.jpeg",
     },
     {
       id: 8,
-      title: "Menyesal",
-      artist: "Yovie & Nuno",
-      cover: "https://i.scdn.co/image/ab67616d00001e02h5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+      title: "Intentions",
+      artist: "Starfall",
+      cover: "assets/music/icon/8. starfall - intentions (Lyrics).jpeg",
+      audio: "assets/music/song_list/8. starfall - intentions (Lyrics).mp3",
+      icon: "assets/music/icon/8. starfall - intentions (Lyrics).jpeg",
     },
     {
       id: 9,
-      title: "Sisa Rasa",
-      artist: "Mahalini",
-      cover: "https://i.scdn.co/image/ab67616d00001e02i5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+      title: "Wow",
+      artist: "Post Malone",
+      cover:
+        "assets/music/icon/9. Post Malone - _Wow._ (Official Music Video).jpeg",
+      audio:
+        "assets/music/song_list/9. Post Malone - _Wow._ (Official Music Video).mp3",
+      icon: "assets/music/icon/9. Post Malone - _Wow._ (Official Music Video).jpeg",
     },
     {
       id: 10,
-      title: "Pesan Terakhir",
-      artist: "Lyodra",
-      cover: "https://i.scdn.co/image/ab67616d00001e02j5a4b2d4a3d4e5f3a4b3c4d2",
-      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+      title: "Moonlight",
+      artist: "Chase Atlantic",
+      cover: "assets/music/icon/10. Moonlight.jpeg",
+      audio: "assets/music/song_list/10. Moonlight.mp3",
+      icon: "assets/music/icon/10. Moonlight.jpeg",
     },
   ];
 
@@ -102,7 +122,9 @@ function initMusic() {
 
       songElement.innerHTML = `
       <div class="w-12 h-12 bg-pink-100 rounded-md flex items-center justify-center mr-4">
-        <i class="fas fa-music text-pink-500"></i>
+        <img src="${song.icon}" alt="${
+        song.title
+      }" class="w-full h-full object-cover">
       </div>
       <div>
         <h3 class="font-semibold text-pink-800">${index + 1}. ${song.title}</h3>
@@ -121,23 +143,30 @@ function initMusic() {
   }
 
   function playSong(index) {
-    // 🔹 Hentikan musik background dulu
     if (typeof stopBgMusic === "function") stopBgMusic();
 
-    if (index === currentSongIndex && isPlaying) {
-      pauseSong();
-      return;
-    }
     const song = playlist[index];
-    audioPlayer.src = song.audio;
+
+    // Reset audioPlayer dulu
+    audioPlayer.innerHTML = `<source src="${song.audio}" type="audio/mpeg">`;
+    audioPlayer.load();
     audioPlayer.play().then(() => {
       currentSongIndex = index;
       isPlaying = true;
       updatePlayerUI();
-      updatePlaylistUI();
       playIcon.className = "fas fa-pause";
     });
   }
+
+  // 🔹 Fungsi global untuk hentikan music.js player
+  window.stopPlayerMusic = function () {
+    if (!audioPlayer.paused) {
+      audioPlayer.pause();
+      isPlaying = false;
+      playIcon.className = "fas fa-play";
+      updatePlaylistUI();
+    }
+  };
 
   function pauseSong() {
     audioPlayer.pause();

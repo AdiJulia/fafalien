@@ -4,11 +4,14 @@ const toggleBtn = document.getElementById("music-toggle");
 const musicIcon = document.getElementById("musicIcon"); // pastikan ada
 let musicStarted = false;
 
-bgMusic.volume = 0.3;
+bgMusic.volume = 0.4;
 
 // Fungsi toggle manual lewat tombol
 toggleBtn.addEventListener("click", () => {
   if (bgMusic.paused) {
+    // 🔹 stop music.js dulu
+    if (typeof stopPlayerMusic === "function") stopPlayerMusic();
+
     bgMusic.play();
     musicIcon.classList.remove("fa-play");
     musicIcon.classList.add("fa-pause");
@@ -18,6 +21,7 @@ toggleBtn.addEventListener("click", () => {
     musicIcon.classList.add("fa-play");
   }
 });
+
 
 // === AUTO MULAI JIKA USER INTERAKSI DI MANA SAJA ===
 function startMusicOnce() {
