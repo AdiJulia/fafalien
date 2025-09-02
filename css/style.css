@@ -279,6 +279,34 @@
   font-size: 0.8rem;
 }
 
+#messagePopup .popup-container {
+  width: 80vw;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#messagePopup .message-body {
+  flex: 1; /* isi body ambil ruang */
+  overflow-y: auto; /* body bisa discroll */
+  margin-bottom: 15px; /* kasih jarak dari footer */
+}
+
+#calendarMessagePopup .popup-container {
+  width: 80vw;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#calendarMessagePopup .message-body {
+  flex: 1; /* isi body ambil ruang */
+  overflow-y: auto; /* body bisa discroll */
+  margin-bottom: 15px; /* kasih jarak dari footer */
+}
+
 /* Audio Float */
 .music-float {
   position: fixed;

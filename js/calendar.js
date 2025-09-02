@@ -30,8 +30,8 @@ function initCalendar() {
     }
 
     // === Popup handling ===
-    const popup = document.getElementById("messagePopup");
-    const closeBtn = document.getElementById("closePopup");
+    const popup = document.getElementById("calendarMessagePopup");
+    const closeBtn = document.getElementById("calendarCloseBtn");
 
     document.querySelectorAll(".special-date").forEach(day => {
       day.addEventListener("click", () => {
