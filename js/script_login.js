@@ -5,7 +5,7 @@ function checkLogin() {
   const password = document.getElementById("password").value;
   const errorMessage = document.getElementById("error-message");
 
-  if (username === "love" && password === "123") {
+  if (username === "fafalien" && password === "26062025") {
     // tampilkan pop-up custom
     document.getElementById("love-popup").classList.remove("hidden");
 
@@ -14,12 +14,12 @@ function checkLogin() {
       localStorage.setItem("isLoggedIn", "true"); // tandai sudah login
       window.location.href = "dashboard.html";
     });
-  } else if (username != "love") {
+  } else if (username != "fafalien") {
     const messages = ["Anomali ini di hp ku username-nya siapa joo?"];
     errorMessage.textContent =
       messages[Math.floor(Math.random() * messages.length)];
     errorMessage.classList.remove("hidden");
-  } else if (username === "love" && password === "04052025") {
+  } else if (username === "fafalien" && password === "04052025") {
     const messages = ["AYO SAYANGKU DIKIT LAGI KAMU BISA!!! 😃"];
     errorMessage.textContent =
       messages[Math.floor(Math.random() * messages.length)];
